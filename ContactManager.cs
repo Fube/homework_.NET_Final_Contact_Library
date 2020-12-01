@@ -27,6 +27,8 @@ namespace ContactLibrary
             _contacts.Add(contact);
         }
 
+        public Contact FindById(long? id) => _contacts.First(n => n.ID == id);
+
         public void RemoveContact(long id) => _contacts.RemoveAll(n => n.ID == id);
 
         public void ImportFromFile(Stream stream)

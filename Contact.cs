@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ContactLibrary
 {
-    public class Contact
+    public sealed class Contact
     {
         public string FirstName { get; }
         public string LastName { get; }
