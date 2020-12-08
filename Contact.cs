@@ -9,7 +9,7 @@ using ContactLibrary.Annotations;
 
 namespace ContactLibrary
 {
-    public sealed class Contact : INotifyPropertyChanged
+    public sealed class Contact : INotifyPropertyChanged, ICloneable
     {
 
         private String _firstName, _lastName, _phoneNumber;
@@ -73,6 +73,7 @@ namespace ContactLibrary
 
 
         public override string ToString() => $"ID: {ID}, Name: {FirstName} {LastName}\nPhone Number: {PhoneNumber}";
+        public object Clone() => MemberwiseClone();
 
         public void Deconstruct(out long? id, out string fName, out string lName, out string phone)
         {
