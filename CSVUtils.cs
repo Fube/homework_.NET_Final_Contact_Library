@@ -46,7 +46,7 @@ namespace ContactLibrary
             {
                 foreach (var contact in ContactManager.Instance.Contacts)
                 {
-                    sw.WriteLine($"{contact.FirstName},{contact.LastName}{ (contact.PhoneNumber == null ? "": $",{contact.PhoneNumber}" )}");
+                    sw.WriteLine($"{contact.FirstName},{contact.LastName}{ ( string.IsNullOrEmpty(contact.PhoneNumber) ? "" : $",{contact.PhoneNumber}" )}");
                     sw.Flush();
                 }
             }
