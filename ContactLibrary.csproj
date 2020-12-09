@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Contact.cs" />
     <Compile Include="ContactManager.cs" />
+    <Compile Include="CSVUtils.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

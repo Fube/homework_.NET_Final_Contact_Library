@@ -40,33 +40,5 @@ namespace ContactLibrary
             toUpdate.PhoneNumber = contact.PhoneNumber;
         }
 
-        public void ImportFromFile(Stream stream)
-        {
-            using (var parser = new TextFieldParser(stream))
-            {
-                parser.TextFieldType = FieldType.Delimited;
-                parser.SetDelimiters(",");
-
-                while (!parser.EndOfData)
-                {
-                    string[] fields = parser.ReadFields();
-                    if (fields != null)
-                        AddContact(new Contact(fields[0], fields[2], fields.Length < 3 ? null : fields[3]));
-                }
-            }
-        }
-
-        public void ExportToFile(string path)
-        {
-            using (var sw = new StreamWriter(path))
-            {
-                foreach (var v in Contacts)
-                {
-                    sw.WriteLine($"{v.FirstName},{v.LastName},{ v.PhoneNumber ?? "null" }");
-                    sw.Flush();
-                }
-            }
-        }
-
     }
 }
